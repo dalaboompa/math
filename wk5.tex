@@ -1,0 +1,216 @@
+\documentclass{beamer}
+\usetheme{Boadilla}
+%Information to be included in the title page:
+\title{COMPSCI 1DM3 Tut 4}
+\subtitle{Week 05}
+\author{Zitong Gu}
+\institute{McMaster University}
+\date{Winter 2023}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Function}
+    \begin{definition}
+        Let $X,Y$ be sets, and let $f: X \to Y$. 
+        \begin{enumerate}
+            \item The function $f$ is \textbf{one-to-one} or \textbf{injective} if 
+
+            \vspace{8mm}
+
+            \item The function $f$ is \textbf{onto} or \textbf{surjective} if
+
+            \vspace{8mm}
+
+            \item The function $f$ is \textbf{bijective} if $f$ is both one-to-one and onto.
+            
+        \end{enumerate}
+    \end{definition}
+\end{frame}
+
+\begin{frame}[t]{Injection}
+    \begin{example}
+        Consider the function $$f: \mathbb{Z} \to \mathbb{Z}^{+}, f(n) =  \begin{cases} 
+        2n & n > 0, \\
+        1-2n & n \leq 0.
+        \end{cases}
+        $$ where $\mathbb{Z}^{+} = \{ n \in \mathbb{Z} \mid n \geq 1\}$. Prove that $f$ is injective. 
+    \end{example}
+\end{frame}
+
+\begin{frame}{Surjection}
+    \begin{example}
+        Determine whether $f: \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z}$ is onto if
+        \begin{enumerate}
+            \item $f(m,n) = 2m - n$
+            
+            \vspace{12mm}
+
+            \item $f(m,n) = m^2 - n^2$
+            
+            \vspace{38mm}
+
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}{Surjection}
+    \begin{example}
+        Determine whether $f: \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z}$ is onto if
+        \begin{enumerate}
+            \setcounter{enumi}{2}
+            \item $f(m,n) = m + n + 1$
+            
+            \vspace{12mm}
+
+            \item $f(m,n) = |m| - |n|$
+            
+            \vspace{12mm}
+
+            \item $f(m,n) = m^2 - 4$
+            
+            \vspace{14mm}
+
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}{Bijection}
+    \begin{example}
+        Determine whether each of there functions is a bijection from $\mathbb{R}$ to $\mathbb{R}$.
+        \begin{enumerate}
+            \item $f(x) = -3x + 4$
+            
+            \vspace{8mm}
+
+            \item $f(x) = -3x^2 + 7$
+            
+            \vspace{8mm}
+
+            \item $f(x) = (x+1)/(x+2)$
+            
+            \vspace{8mm}
+
+            \item $f(x) = x^5 + 1$
+            
+            \vspace{10mm}
+
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Function Composition}
+    \begin{theorem}
+        Let $X,Y,Z$ be sets. Let $f: X \to Y$ and $g: Y \to Z$.
+        \begin{enumerate}
+            \item If $f$ and $g$ are both 1-1, then $g \circ f = g(f)$ is 1-1.
+            \item If $f$ and $g$ are both onto, then $g \circ  f$ is onto.
+            \item If $f$ and $g$ are both bijections, then $g \circ f$ is a bijection.
+            \item If $g \circ f$ is 1-1, then $f$ is 1-1, but $g$ need not be. 
+            \item If $g \circ f$ is onto, then $g$ is onto, but $f$ need not be. 
+        \end{enumerate}
+    \end{theorem}
+\end{frame}
+
+\begin{frame}{}
+    %left for proofs of (1), (2), and (4)
+\end{frame}
+
+\begin{frame}[t]{Function Composition}
+    \begin{example}
+        Let $f(x) = ax + b$ and $g(x) = cx + d$ where $a,b,c,d \in \mathbb{R}$. Determine necessary and sufficient conditions on the constant $a,b,c,d$ so that $f \circ g = g \circ f$.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Inverse Function}
+    \begin{example}
+        Let a function $f: \mathbb{R} \to \mathbb{R}$ defined by $f(x) = x^2$. Find
+        \begin{enumerate}
+            \item $f^{-1}(\{1\})$
+            \item $f^{-1}(\{x \mid 0 < x < 1\})$
+            \item $f^{-1}(\{x \mid x > 4\})$
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Flooring and Ceiling}
+    \begin{example}
+        Draw the graph of the function $f(x) = \lceil x \rceil + \lfloor x/2 \rfloor$ from $\mathbb{R}$ to $\mathbb{R}$.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Sequence}
+    \begin{example}
+        Let $a_n = 2^n + 5 \cdot 3^n$ for $n = 0, 1, 2, \dots$
+        \begin{enumerate}
+            \item Find $a_0, a_1, a_2, a_3$ and $a_4$.
+            \item Show that $a_2 = 5a_1 - 6a_0, a_3 = 5a_2 - 6a_1$, and $a_4 = 5a_3 - 6a_2$.
+            \item Show that for all integers $n$ with $n \geq 2$, $a_n = 5a_{n-1}-6a_{n-2}$.
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}{Recurrence Relation}
+    \begin{example}
+        Is the sequence $\{a_n\}$ a solution of the recurrence relation $a_n = 8a_{n-1} - 16a_{n-2}$ if \begin{enumerate}
+            \item $a_n = 0$
+            \item $a_n = 1$
+            \item $a_n = 2^n$
+            \item $a_n = 4^n$
+            \item $a_n = n4^n$
+            \item $a_n = 2 \cdot 4^n + 3n4^n$
+            \item $a_n = (-4)^n$
+            \item $a_n = n^24^n$
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}{Recurrence Relation}
+    \begin{example}
+        Show that the sequence ${a_n}$ is a solution of the recurrence relation $a_n = a_{n-1} + 2a_{n-2} + 2n - 9$ if \begin{enumerate}
+            \item $a_n = -n + 2$
+                        
+            \vspace{8mm}
+            
+            \item $a_n = 5(-1)^n - n + 2$
+                        
+            \vspace{8mm}
+            
+            \item $a_n = 3(-1)^n + 2^n - n + 2$
+                        
+            \vspace{8mm}
+            
+            \item $a_n = 7 \cdot 2^n - n + 2$
+                        
+            \vspace{10mm}
+            
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Recurrence Relation}
+    \begin{example}
+        A factory makes custom sports cars at an increasing rate. In the first month only one car is made, in the second month two cars are made, and so on, with $n$ cars made in the $n$th month. 
+        \begin{enumerate}
+            \item Set up a recurrence relation for the number of cars produced in the first $n$ months by this factory.
+            \item How many cars are produced in the first year?
+            \item Find an explicit formula for the number of cars produced in the first $n$ months by this factory.
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Summation $\Sigma$}
+    \begin{example}
+        Derive a formula for $\sum_{k=1}^{n} k^2$
+    \end{example}
+\end{frame}
+
+
+\begin{frame}{}
+    \begin{center}
+        The End
+    \end{center}
+\end{frame}
+
+\end{document}

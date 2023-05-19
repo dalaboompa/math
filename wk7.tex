@@ -1,0 +1,135 @@
+\documentclass{beamer}
+\usetheme{Boadilla}
+%Information to be included in the title page:
+\title{COMPSCI 1DM3 Tut 4}
+\subtitle{Week 07}
+\author{Zitong Gu}
+\institute{McMaster University}
+\date{Winter 2023}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Big-\textit{O}}
+    % introduce the definition of O(g)
+    \begin{definition}
+        For a given function $g(x)$, we denote by $O(g(x))$ the \textbf{set of functions}
+        $$
+            O(g(x)) = \{ f(x): (\exists c > 0)(\exists x_0 \geq 0)[(\forall x \geq x_0)[0 \leq f(x) \leq c \cdot g(x)]] \}
+        $$
+    \end{definition}
+    % meaning of O
+\end{frame}
+
+\begin{frame}{Notational Abuse}
+    \begin{itemize}
+        \item \textbf{Equal Sign.} $O(g(x))$ is a set of functions, but computer scientists often write $f(x) = O(g(x))$ instead of $f(x) \in O(g(x))$.
+        \begin{example}
+            Consider $f(x) = x^2$ and $g(x) = 2x^2$. \vspace{12mm}
+        \end{example}
+        \item \textbf{Domain.} The domain of $f(x)$ is typically the set of natural numbers $\{0, 1, 2, \dots\}$. We may restrict the domain to a subset of $\mathbb{N}$ or extend to $\mathbb{R}$. 
+        \item \textbf{Non-negative functions.} When using Big-Oh notation, we assume that the involved functions are (asymptotically) non-negative. 
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Big-\textit{O}}
+    \begin{example}
+        Determine whether each of these functions is $\textit{O}(x)$.
+        \begin{enumerate}
+            \item $f(x) = 10$
+            \vspace{10mm}
+            \item $f(x) = 3x + 7$
+            \vspace{10mm}
+            \item $f(x) = x^2 + x + 1$
+            \vspace{10mm}
+            \item $f(x) = 5 \log{x}$
+            \vspace{10mm}
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Big-\textit{O}}
+    \begin{example}
+        Determine whether each of these functions is $\textit{O}(x)$.
+        \begin{enumerate}
+            \setcounter{enumi}{4}
+            \item $f(x) = \lfloor x \rfloor$
+            \vspace{20mm}
+            \item $f(x) = \lceil x/2 \rceil$
+            \vspace{22mm}
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Big-\textit{O}}
+    \begin{theorem}
+        Let $f(x) = c_nx^n + c_{n-1}x^{n-1} + \dots + c_1x + c_0$, where $c_0, c_1, \dots, c_n \in \mathbb{R}$. Then $f(x) \in O(x^n)$.  
+    \end{theorem}
+    \begin{example}
+        Determine whether each of these functions is $O(x^2)$.
+        \begin{enumerate}
+            \item $f(x) = 17x + 11$
+            \item $f(x) = x^2 + 1000$
+            \item $f(x) = x^4/2$
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Big-\textit{O}}
+    \begin{example}
+        Determine whether each of these functions is $O(x^2)$.
+        \begin{enumerate}
+            \item $f(x) = x\log{x}$
+            \vspace{12mm}
+            \item $f(x) = 2^x$
+            \vspace{12mm}
+            \item $f(x) = \lfloor x \rfloor \cdot \lceil x \rceil$
+            \vspace{14mm}
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Big-\textit{O}}
+    \begin{example}
+        Show that the function $f(x) = \dfrac{x^2 + 1}{x + 1}$ is $O(x)$.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Big-\textit{O}}
+    \begin{example}
+        Show that the function $\dfrac{x^3 + 2x}{2x + 1}$ is $O(x^2)$.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Big-\textit{O}}
+    \begin{example}
+        Find the least integer $n$ such that $f(x)$ is $O(x^n)$ for each of these functions. 
+        \begin{enumerate}
+            \item $f(x) = 2x^3 + x^2\log{x}$
+            \item $f(x) = 3x^3 + (\log{x})^4$
+            \item $f(x) = \dfrac{x^4 + x^2 + 1}{x^3 + 1}$
+            \item $f(x) = \dfrac{x^4 + 5\log{x}}{x^4 + 1}$
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Big-\textit{O}}
+    \begin{example}
+        Explain what it means for a function to be $O(1)$.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Big-\textit{O}}
+   \begin{example}
+        Let $k \in \mathbb{Z^+}$. Show that $1^k + 2^k + \dots + n^k$ is $O(n^{k+1})$
+   \end{example}
+\end{frame}
+
+\begin{frame}{}
+    \begin{center}
+        The End
+    \end{center}
+\end{frame}
+
+\end{document}

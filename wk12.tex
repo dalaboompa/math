@@ -1,0 +1,107 @@
+\documentclass{beamer}
+\usetheme{Boadilla}
+\usepackage{algorithm,algorithmic}
+\renewcommand{\mod}{\text{ mod }}
+\renewcommand{\div}{\textbf{ div }}
+\renewcommand{\implies}{\rightarrow}
+\let\cd\cdot
+%Information to be included in the title page:
+\title{COMPSCI 1DM3 Tut 4}
+\subtitle{Week 12}
+\author{Zitong Gu}
+\institute{McMaster University}
+\date{Winter 2023}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}[t]{Counting}
+    \begin{example}
+        How many bit strings of length ten both begin and end with a $1$?
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Counting}
+    \begin{example}
+        How many strings are there of lowercase letters of length four or less, not counting the empty string?
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Counting}
+    \begin{example}
+        How many strings are there of four lowercase letters that have the letter $x$ in them?
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Counting}
+    \begin{example}
+        How many functions are there from the set $\{1,2,\dots,n\}$, where $n$ is a positive integer, to the set $\{0,1\}$?
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Counting}
+    \begin{example}
+        How many functions are there from the set $\{1,2,\dots,n\}$, where $n$ is a positive integer, to the set $\{0,1\}$ \begin{enumerate}
+            \item that are one-to-one?
+            \item that assign $0$ to both $1$ and $n$?
+            \item that assign $1$ to exactly one of the positive integers less than $n$?
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Counting}
+    \begin{example}
+        A \textbf{palindrome} is a string whose reversal is identical to the string. How many bit strings of length $n$ are palindromes?
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Counting}
+    \begin{theorem}[Inclusion-exclusion Principle]
+        $|A \cup B| = |A| + |B| - |A \cap B|$
+    \end{theorem}
+    \begin{example}
+        How many bit strings of length $10$ either begin with three $0$s or end with two $0$s?
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Counting}
+    \begin{example}
+        How many bit strings of length $10$ contain either five consecutive $0$s or five consecutive $1$s?
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Counting}
+    \begin{theorem}[The Product Rule]
+        Suppose that a procedure can be broken down into a sequence of two tasks. If there are $n_1$ ways to do the first task and for each of these ways of doing the first task, there are $n_2$ ways to do the second task, then there are $n_1n_2$ ways to do the procedure.
+    \end{theorem}
+    \begin{example}
+        Use the product rule to show that there are $2^{2^n}$ different truth tables for propositions in $n$ variables.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{The Pigenhole Principle}
+    \begin{example}
+        How many numbers must be selected from the set $\{1, 2, 3, 4, 5, 6\}$ to guarantee that at least one pair of these numbers add up to $7$?
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{The Pigenhole Principle}
+    \begin{example}
+        There are $38$ different time periods during which classes at a university can be scheduled. If there are $677$ different classes, how many different rooms will be needed?
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{The Pigenhole Principle}
+    \begin{example}
+        Show that if $f$ is a function from $S$ to $T$, where $S$ and $T$ are nonempty finite sets and $m = \lceil |S|/|T| \rceil$, then there are at least $m$ elements of $S$ mapped to the same value of $T$. That is, show that there are distinct elements $s_1,s_2,\dots,s_m$ of $S$ such that $f(s_1) = f(s_2) = \dots = f(s_m)$.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{The Pigenhole Principle}
+    \begin{example}
+        Let $n_1, n_2,\dots, n_t$ be positive integers. Show that if $n_1 + n_2 +\dots+ n_t - t + 1$ objects are placed into $t$ boxes, then for some $i$, where $i = 1, 2,\dots, t$, the $i$th box contains at least $n_i$ objects.
+    \end{example}
+\end{frame}
+
+\end{document}

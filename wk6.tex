@@ -1,0 +1,179 @@
+\documentclass{beamer}
+\usetheme{Boadilla}
+%Information to be included in the title page:
+\title{COMPSCI 1DM3 Tut 4}
+\subtitle{Week 06}
+\author{Zitong Gu}
+\institute{McMaster University}
+\date{Winter 2023}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Infinite Set}
+    \begin{definition}
+        \begin{enumerate}
+            \item The set $S$ is \textbf{denumerable} (enumerable) if there exists a bijection $f: \mathbb{N} \to S$
+            % informally, a set S is denumerable if S can be listed without repetition: if f: N to S, then we can list elements of S as f(1), f(2), f(3), ...
+            \item The set $S$ is \textbf{countable} if $S$ is finite or denumerable. 
+            \item The set $S$ is \textbf{uncountable} if $S$ is not countable, i.e., if $S$ is infinite and not denumerable. 
+        \end{enumerate}
+        % Note that since N is infinite, every denumerable set is infinite. 
+    \end{definition}
+    \begin{theorem}
+        Let $A$ be a nonempty set. If there exists a surjective function $g: \mathbb{N} \to A$, then $A$ is countable, i.e., $A$ is finite or denumerable.
+        % to show a set A is countable, it is enough to show that it there exists a surjection from N to A. 
+    \end{theorem}
+\end{frame}
+
+\begin{frame}[t]{Infinite Set}
+    \begin{theorem}
+        \begin{enumerate}
+            \item The set $\mathbb{R}$ is uncountable.
+            \item If $a,b \in \mathbb{R}$ and  $a<b$, then the intervals $(a,b), [a,b], [a,b)$, and  $(a,b]$ are uncountable.
+        \end{enumerate}
+    \end{theorem}
+    \begin{example}
+        Give an example of two uncountable sets A and B such that $A \cap B$ is \begin{enumerate}
+            \item finite
+
+            \vspace{6mm}
+            
+            \item countably infinite, i.e., denumerable. 
+            
+            \vspace{6mm}
+            
+            \item uncountable
+            
+            \vspace{8mm}
+            
+        \end{enumerate} 
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Infinite Set}
+    \begin{theorem}
+        Let $A$ and $B$ be denumerable sets, then $A \times B$ is denumerable. 
+    \end{theorem}
+    \begin{example}
+        Show that $Z^+ \times Z^+$ is countable. 
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Infinite Set}
+    \begin{example}
+        Show that $(0,1)$ and $\mathbb{R}$ have the same cardinality by showing that $f(x) = \frac{2x-1}{2x(1-x)}$ is a bijection from $(0,1)$ to $\mathbb{R}$.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Infinite Set}
+    \begin{theorem}[Schr\"{o}der-Bernstein Theorem]
+        If there exists two injections $f: A \to B$ and $g: B \to A$ between the sets $A$ and $B$, then there exists a bijection $h: A \to B$. 
+    \end{theorem}
+    \begin{example}
+        Show that $(0,1)$ and $\mathbb{R}$ have the same cardinality by using the Schr\"{o}der-Bernstein theorem. 
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Infinite Set}
+    \begin{example}
+        Show that $(0,1)$ and $\mathbb{R}$ have the same cardinality (one of the easiest approaches).
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Matrix Multiplication - Distributive Law}
+    \begin{theorem}[Left Distributivity of Matrix Multiplication]
+        Let $A$ be an $m \times n$ matrix, and let $B$ and $C$ have sizes for which the indicated sums and products are defined, then $A(B + C) = AB + AC$. 
+    \end{theorem}
+\end{frame}
+
+\begin{frame}[t]{Matrix Multiplication - Distributive Law}
+    \begin{theorem}[Right Distributivity of Matrix Multiplication]
+        Let $A$ be an $m \times n$ matrix, and let $B$ and $C$ have sizes for which the indicated sums and products are defined, then $(B + C)A = BA + CA$. 
+    \end{theorem}
+    % Note that matrix mulplication is not symmetrical, i.e., AB neq BA. That is why we have left dis. and right dis. 
+\end{frame}
+
+\begin{frame}[t]{Diagonal Matrix}
+    \begin{definition}
+        The square matrix $A = [a_{ij}]$ is called a \textbf{diagonal matrix} if $a_{ij} = 0$ when $i \neq j$.
+    \end{definition}
+    \begin{theorem}
+        If two $n \times n$ matrices $A$ and $B$ are diagonal, then $AB$ is diagonal. 
+    \end{theorem}
+\end{frame}
+
+\begin{frame}[t]{Matrix}
+    \begin{example}
+        Let $A = \begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}$. Find a formula for $A^n$, whenever $n$ is a positive integer.
+        % A = I + [[0,1],[0,0]] = (I + B), find (I + B)^n, use binomial expansion. 
+        % this can be proven using mathematical induction. 
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Matrix}
+    \begin{example}
+        Let $A = \begin{bmatrix}
+            -1 & 2 \\
+            1 & 3
+        \end{bmatrix}$, find $A^{-1}, A^3$, and $(A^{-1})^3$. 
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Matrix}
+    \begin{example}
+        Let $A$ be an invertible matrix. Show that $(A^n)^{-1} = (A^{-1})^n$ whenever $n$ is a positive integer. 
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Matrix}
+    \begin{example}
+        Let $A$ be a matrix. Show that the matrix $AA^t$ is symmetric. 
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Zero-One Matrix}
+    \begin{example}
+        Let $A = \begin{bmatrix}
+        1 & 0 & 1 \\
+        1 & 1 & 0 \\
+        0 & 0 & 1
+    \end{bmatrix}$ and $B = \begin{bmatrix}
+        0 & 1 & 1 \\
+        1 & 0 & 1 \\
+        1 & 0 & 1
+    \end{bmatrix}$. Find $A \vee B$, $A \wedge B$, and $A \odot B$.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Zero-One Matrix}
+    \begin{example}
+        Let $A = \begin{bmatrix}
+            1 & 0 & 0 \\
+            1 & 0 & 1 \\
+            0 & 1 & 0
+        \end{bmatrix}$. Find $A^{[2]}, A^{[3]},$ and $A \vee A^{[2]} \vee A^{[3]}$. 
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Identity of Zero-One Matrix}
+    \begin{example}
+        Let $A$ be a square zero-one matrix. Let $I$ be the identity matrix. Show that $A \odot I = I \odot A = A$. 
+    \end{example}
+\end{frame}
+
+\begin{frame}{Challenge - Another Way to Show $Z^+ \times Z^+$ is Countable}
+    \begin{example}
+        Prove that $Z^+ \times Z^+$ is countable (strictly speaking, denumerable) by showing the function $f: Z^+ \times Z^+ \to N$ by $f(m,n) = 2^{m-1}(2n-1)$ for all $(m,n) \in Z^+ \times Z^+$ is a bijection
+        . 
+    \end{example}
+    
+    \vspace{38mm}
+
+    \begin{center}
+        The End
+    \end{center}
+\end{frame}
+
+\end{document}

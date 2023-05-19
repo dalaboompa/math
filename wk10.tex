@@ -1,0 +1,122 @@
+\documentclass{beamer}
+\usetheme{Boadilla}
+\usepackage{algorithm,algorithmic}
+\renewcommand{\mod}{\text{ mod }}
+\renewcommand{\div}{\textbf{ div }}
+\renewcommand{\implies}{\rightarrow}
+\let\cd\cdot
+%Information to be included in the title page:
+\title{COMPSCI 1DM3 Tut 4}
+\subtitle{Week 10}
+\author{Zitong Gu}
+\institute{McMaster University}
+\date{Winter 2023}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}[t]{Integer Representation (one last piece)}
+    \begin{example}
+        Find the decimal expansion of the number with the $n$-digit base seven expansion $(111 \dots 111)_7$ (with $n$ 1's). 
+    \end{example}
+\end{frame} 
+
+\begin{frame}[t]{Prime Numbers}
+    \begin{definition}
+        A positive integer $p$ is \textbf{prime} if $p > 1$ and \begin{center}
+            $(\forall a,b \in \mathbb{Z^+})(p = ab \implies (a = 1 \vee b = 1))$.
+        \end{center}
+    \end{definition}
+    \begin{theorem}[Fundamental Theorem of Arithmetic]
+        Every positive integer greater than 1 can be written as a product of primes. Furthermore, this product of primes is unique, except for the order in which the factors appear.
+    \end{theorem}
+    \begin{example}
+        Find the prime factorization of $10!$.
+    \end{example}
+\end{frame} 
+
+\begin{frame}[b]{}
+    \begin{example}
+        Find the largest prime factor of the number 600851475143. 
+    \end{example}
+    \vspace{4mm}
+\end{frame}
+
+\begin{frame}{GCD}
+    \begin{definition}
+        Let $a,b \in \mathbb{Z}$ with at least one of $a$ and $b$ nonzero. The \textbf{greatest common divisor (gcd)} of $a$ and $b$ is the unique positive integer $d$ such that \begin{enumerate}
+            \item $d \mid a$ and $d \mid b$ and
+            \item $(\forall c \in \mathbb{Z^+})[(c \mid a) \wedge (c \mid b) \implies c \leq d]$.
+        \end{enumerate} We denote the gcd of $a$ and $b$ by $(a,b)$ or gcd$(a,b)$.
+    \end{definition}
+    \begin{example}
+        Find the gcd and lcm of \begin{itemize}
+            \item $(2^2 \cd 3^3 \cd 5^5, 2^5 \cd 3^3 \cd 5^2)$ 
+            \vspace{8mm}
+        \end{itemize}
+    \end{example}
+\end{frame}
+
+\begin{frame}{GCD}
+    \begin{example}
+        Find the gcd and lcm of \begin{itemize}
+            \item $(2 \cd 3 \cd 5 \cd 7 \cd 11 \cd 13, 2^{11} \cd 3^9 \cd 11 \cd 17^{14})$
+            \vspace{6mm}
+            \item $(17, 17^{17})$
+            \vspace{6mm}
+            \item $(2^2 \cd 7, 5^3 \cd 13)$
+            \vspace{6mm}
+            \item $(0,5)$
+            \vspace{6mm}
+            \item $(2 \cd 3 \cd 5 \cd 7, 2 \cd 3 \cd 5 \cd 7)$
+            \vspace{8mm}
+        \end{itemize}
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{GCD}
+    \begin{example}
+        Find gcd$(1000,625)$ and lcm$(1000,625)$ and verify that gcd$(1000,625) \cdot $lcm$(1000,625) = 1000 \cdot 625$. 
+    \end{example}
+\end{frame}
+
+\begin{frame}{GCD - Euclidean Algorithm}
+    \begin{lemma}
+        Let $a,b \in \mathbb{Z}$ with $a \neq 0$ and $b \neq 0$. Assume we have $q,r \in \mathbb{Z}$ such that $a = bq + r$. Then $(a,b) = (b,r)$.
+    \end{lemma}
+    \begin{block}{Euclidean Algorithm}
+        \begin{enumerate}
+            \item Given $a,b \in \mathbb{Z^+}$.
+            \item If $b \mid a$, then $(a,b) = b$, and STOP.
+            \item If $b \nmid a$, then use the Division Algorithm to find $q,r \in \mathbb{Z}$ such that $a = bq + r$, where $0 \leq r < b$, Note that $(a,b) = (b,r)$.
+            \item Repeat from step (2), replacing $a$ by $b$ and $b$ by $r$. 
+        \end{enumerate}
+    \end{block}
+\end{frame}
+
+\begin{frame}[t]{GCD - Euclidean Algorithm}
+    \begin{example}
+        Find the gcd of $81$ and $24$ using the Euclidean Algorithm. 
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{GCD}
+    \begin{theorem}
+        Let $a$ and $b$ be positive integers. Then $ab = \text{gcd}(a,b) \cdot \text{lcm}(a,b)$.
+    \end{theorem}
+\end{frame}
+
+\begin{frame}[t]{GCD}
+    \begin{example}
+        If the product of two integers is $2^73^85^27^{11}$ and their gcd is $2^33^45$, what is their lcm?
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{GCD}
+    \begin{example}
+        Show that if $a,b$ and $m$ are integers such that $m \geq 2$ and $a \equiv b \mod m$, then $\text{gcd}(a,m) = \text{gcd}(b,m)$.
+    \end{example}
+\end{frame}
+
+\end{document}

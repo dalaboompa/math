@@ -1,0 +1,153 @@
+\documentclass{beamer}
+\usetheme{Boadilla}
+\usepackage{algorithm,algorithmic}
+\renewcommand{\mod}{\textbf{ mod }}
+\renewcommand{\div}{\textbf{ div }}
+\renewcommand{\implies}{\rightarrow}
+%Information to be included in the title page:
+\title{COMPSCI 1DM3 Tut 4}
+\subtitle{Week 08}
+\author{Zitong Gu}
+\institute{McMaster University}
+\date{Winter 2023}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}[t]{Worst-Case Complexity}
+    \begin{example}
+        Give a big-\textit{O} estimate for the number of operations (where an operation is an addition or a multiplication) used in this segment of an algorithm. \begin{algorithm}[H]
+            \begin{algorithmic}[1]
+                \STATE $t := 0$
+                \FOR{$i=1$ to $3$}
+                \FOR{$j=1$ to $4$}
+                    \STATE $t := t + ij$
+                \ENDFOR
+                \ENDFOR
+            \end{algorithmic}
+        \caption{pseudocode}
+        \end{algorithm}
+        \vspace{2mm}
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Worst-Case Complexity}
+    \begin{example}
+        Give a big-\textit{O} estimate for the number of operations (where an operation is an addition or a multiplication) used in this segment of an algorithm. \begin{algorithm}[H]
+            \begin{algorithmic}[1]
+                \STATE $t := 0$
+                \FOR{$i=1$ to $n$}
+                \FOR{$j=1$ to $n$}
+                    \STATE $t := t + i + j$
+                \ENDFOR
+                \ENDFOR
+            \end{algorithmic}
+        \caption{pseudocode}
+        \end{algorithm}
+        \vspace{2mm}
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Complexity Analysis}
+    \begin{example}
+        What is the largest $n$ for which one can solve within one second a problem using an algorithm that requires $f(n)$ bit operations, where each bit operation is carried out in $10^{-9}$ seconds, with these functions $f(n)$? \begin{enumerate}
+            \item $\log{n}$
+            \item $n$
+            \item $n\log{n}$
+            \item $n^2$
+            \item $2^n$
+            \item $n!$
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}{Complexity Analysis - Insertion Sort (not on test or exam)}
+    \begin{example}
+        \begin{algorithm}[H]
+            \caption{Insertion-Sort($A$, $n$)}
+            \begin{algorithmic}[1]
+                \FOR{$i = 2$ to $n$}
+                      \STATE $key = A[i]$
+                      \STATE $j = i - 1$
+                      \WHILE{$j > 0$ and $A[i] > key$}
+                        \STATE $A[j+1] = A[j]$
+                        \STATE $j = j -1$
+                      \ENDWHILE
+                      \STATE $A[j+1] = key$
+                \ENDFOR
+            \end{algorithmic}
+        \end{algorithm}
+        \vspace{2mm}
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Divisibility}
+    \begin{example}
+        Show that if $a \mid b$ and $b \mid a$, where $a,b \in \mathbb{Z}$, then $a = b$ or $a = -b$. 
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Divisibility}
+    \begin{example}
+        Show that if $a,b,c,d \in \mathbb{Z}$ with $a \neq 0$ such that $a \mid c$ and $b \mid d$, then $ab \mid cd$. 
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Divisibility}
+    \begin{example}
+        Show that if $a,b,c \in \mathbb{Z}$ with $a \neq 0$ and $c \neq 0$ such that $ac \mid bc$, then $a \mid b$.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Divisibility}
+    \begin{block}{Extending proof methods}
+        To prove a disjunction $p \vee q$, we may choose to prove $\neg p \implies q$.
+    \end{block}
+    \begin{example}
+        Prove that if $a,b \in \mathbb{Z}$ and $a \mid b$, then $a$ is odd or $b$ is even. 
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Divisibility}
+    \begin{example}
+        Prove that if $a,b \in \mathbb{Z} \setminus \{0\}$, $a \mid b$, and $a + b$ is odd, then $a$ is odd. 
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Modular Arithmetic}
+    \begin{example}
+        Show that if $a,d \in \mathbb{Z^+}$, then $(-a) \textbf{ div } d = -a \textbf{ div } d$ iff $d \mid a$.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Modular Arithmetic}
+    \begin{theorem}[The Division Algorithm]
+        Let $a,b \in \mathbb{Z}$ with $b > 0$. Then there exists unique $q,r \in \mathbb{Z}$ such that $a = bq+r$, where $0 \leq r < b$. 
+    \end{theorem}
+    \begin{example}
+        Show that if $n,k \in \mathbb{Z^+}$, then $\lceil n/k \rceil = \lfloor (n-1)/k \rfloor + 1$
+    \end{example}
+\end{frame}
+
+\begin{frame}{Modular Arithmetic}
+    \begin{example}
+        Evaluate these quantities. \begin{enumerate}
+            \item $-17 \textbf{ mod } 2$ \vspace{8mm}
+            \item $144 \mod 7$ \vspace{8mm}
+            \item $-101 \mod 13$ \vspace{8mm}
+            \item $199 \mod 19$ \vspace{10mm}
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Congruences}
+    \begin{definition}
+        Let $a,b \in \mathbb{Z}$, and let $m \in \mathbb{Z^+}$. The integers $a$ and $b$ are \textbf{congruent modulo} m, written $a \equiv b \mod m$, if $m \mid (a - b)$. 
+    \end{definition}
+    \begin{example}
+        Show that if $a \equiv b \, (\text{mod } m)$ and $c \equiv d \, (\text{mod } m)$, where $a,b,c,d,m \in \mathbb{Z}$ with $m \geq 2$, then $a - c \equiv b - d \, (\text{mod } m)$.
+    \end{example}
+\end{frame}
+
+\end{document}

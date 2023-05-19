@@ -1,0 +1,106 @@
+\documentclass{beamer}
+\usetheme{Boadilla}
+\usepackage{algorithm,algorithmic}
+\renewcommand{\mod}{\text{ mod }}
+\renewcommand{\div}{\textbf{ div }}
+\renewcommand{\implies}{\rightarrow}
+\let\cd\cdot
+%Information to be included in the title page:
+\title{COMPSCI 1DM3 Tut 4}
+\subtitle{Week 11}
+\author{Zitong Gu}
+\institute{McMaster University}
+\date{Winter 2023}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}[t]{Mathematical Induction}
+    \begin{example}
+        Let P(n) be the statement that $1^2 + 2^2 + \dots + n^2 = n(n + 1)(2n + 1)/6$ for the positive integer n.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Mathematical Induction}
+    \begin{example}
+        Prove that $1 \cdot 1! + 2 \cdot 2! + \dots + n \cdot n! = (n + 1)! - 1$ whenever n is a positive integer.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Mathematical Induction}
+    \begin{example}
+        \begin{enumerate}
+            \item Find a formula for $$\dfrac{1}{1 \cd 2} + \dfrac{1}{2 \cd 3} + \dots + \dfrac{1}{n(n+1)}$$ by examining the values of this expression for small values of $n$.
+            \item Prove the formula you conjectured in part (a). 
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Mathematical Induction}
+    \begin{example}
+        Prove that for every positive integer $n$, $\sum_{k=1}^n k \cd 2^k = (n-1)\cd 2^{n+1} + 2$.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Mathematical Induction}
+    \begin{example}
+        Prove that $3^n < n!$ if $n$ is an integer greater than $6$.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Mathematical Induction}
+    \begin{example}
+        Prove that if $h > -1$, then $1 + nh \leq (1 + h)^n$ for all non-negative integers $n$.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Mathematical Induction}
+    \begin{example}
+        Prove that if $A_1,A_2,\dots,A_n$ and $B$ are sets, then $(A_1-B)\cap(A_2-B)\cap\dots\cap(A_n-B) = (A_1\cap A_2 \cap \dots \cap A_n)-B$. 
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Mathematical Induction}
+    \begin{example}
+        Prove that if $A_1,A_2,\dots,A_n$ and $B$ are sets, then $(A_1-B)\cup(A_2-B)\cup\dots\cup(A_n-B) = (A_1\cup A_2 \cup \dots \cup A_n)-B$. 
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Mathematical Induction}
+    \begin{example}
+        Suppose that $A = \begin{bmatrix} a & 0 \\ 0 & b \end{bmatrix}$, where $a, b \in \mathbb{R}$. Show that $A^n = \begin{bmatrix}
+            a^n & 0 \\ 0 & b^n
+        \end{bmatrix}$ for all $n \in \mathbb{N^+}$. 
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Strong Induction}
+    \begin{example}
+        Use strong induction to show that every positive integer can be written as a sum of distinct powers of two, that is, as a sum of a subset of the integers $2^0 =1, 2^1 =2, 2^2 = 4$, and so on.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Recursive Definition}
+    \begin{example}
+        Let $f_n$ denote the $n$-th Fibonacci number. Prove that $f_1^2 + f_2^2 + \dots + f_n^2 = f_nf_{n+1}$. 
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Recursive Definition}
+    \begin{example}
+        Let $f_n$ denote the $n$-th Fibonacci number. Prove that $f_1 + f_3 + \dots + f_{2n-1} = f_{2n}$. 
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Recursive Definition}
+    \begin{example}
+        Let $f_n$ denote the $n$-th Fibonacci number and $A = \begin{bmatrix}
+            1 & 1 \\ 1 & 0
+        \end{bmatrix}$. Show that $A^n = \begin{bmatrix}
+            f_{n+1} & f_n \\ f_n & f_{n-1}
+        \end{bmatrix}$ when $n$ is a positive integer. 
+    \end{example}
+\end{frame}
+
+\end{document}

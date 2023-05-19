@@ -1,0 +1,191 @@
+\documentclass{beamer}
+\usetheme{Boadilla}
+%Information to be included in the title page:
+\title{COMPSCI 1DM3 Tut 4}
+\subtitle{Week 04}
+\author{Zitong Gu}
+\institute{McMaster University}
+\date{Winter 2023}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Announcement}
+    \begin{enumerate}
+        \item To get participation marks, you must ask math-related questions or answer my questions (I don't always have questions for you).
+        \item Notes will be posted on MS Teams (join code: eu0mvpu) after each tutorial. 
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Set Membership}
+    \begin{example}
+        For each of the following sets, determine whether 2 is an element of that set.
+        \begin{enumerate}
+            \item $\{ x \in \mathbb{R} \mid x \text{ is an integer greater than } 1\}$
+            \item $\{ x \in \mathbb{R} \mid x \text{ is the square of an integer}\}$
+            \item \{2, \{2\}\}
+            \item \{\{2\},\{\{2\}\}\}
+            \item \{\{2\},\{2,\{2\}\}\}
+            \item \{\{\{2\}\}\}
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Subset}
+    \begin{definition}
+        Let $A$ and $B$ be sets. $A \subseteq B$ if $(\forall x)(x \in A \Rightarrow x \in B)$.
+    \end{definition}
+    \begin{definition}
+        Let $A$ and $B$ be sets. $A \subset B$ if $A \subseteq B$ and $A \neq B$.
+    \end{definition}
+    \begin{theorem}
+        For every set $S$, \begin{enumerate}
+            \item $\emptyset \subseteq S$
+            \item $S \subseteq S$
+        \end{enumerate}
+    \end{theorem}
+\end{frame}
+
+\begin{frame}{Subset}
+    %State the definition of A subsets B
+    %State the def of proper subset
+    %State two theorems: for all set S, emptyset seubsets S; S subsets itself.
+    \begin{example}
+        Determine whether each of these statements is true or false.
+        \begin{enumerate}
+            \item $x \in \{x\}$
+            \item $\{x\} \subseteq \{x\}$
+            \item $\{x\} \subset \{x\}$
+            \item $\{x\} \in \{x\}$
+            \item $\{x\} \in \{\{x\}\}$
+            \item $\emptyset \subseteq \{x\}$
+            \item $\emptyset \in \{x\}$
+            \item $\emptyset \subseteq \emptyset$
+            \item $\emptyset \in \{\emptyset\}$
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}{The notation of $|$  $|$}
+    %introduce the cardinality of a set, the norm of a vector in R^n
+\end{frame}
+
+\begin{frame}[t]{Sets - Cartesian Products}
+    \begin{example}
+        Find $A^2 = A \times A$ if (a) $A = \{0,1,3\}$, (b) $A = \{1,2,a,b\}$.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Sets - Cartesian Products}
+    \begin{example}
+        Let $A = \{a,b,c\}, B = \{x,y\}, \text{ and } C = \{0,1\}$. Find 
+        \begin{enumerate}
+            \item $A \times B \times C$
+            \item $C \times B \times A$
+            \item $C \times A \times B$
+            \item $B^3$
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}{Set Operations}
+    %Left for definitions of set union, intersection, complement, and difference.
+\end{frame}
+
+\begin{frame}[t]{More on Subsets}
+    \begin{example}
+        Let $A,B, \text{ and } C$ be sets. Show that \begin{enumerate}
+            \item $(A \cup B) \subseteq (A \cup B \cup C)$
+            \item $(A \cap B \cap C) \subseteq (A \cap B)$
+            \item $(A - B) - C \subseteq A - C$
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}{Set Identities}
+    We will demonstrate two methods for proving set identities: \begin{enumerate}
+        \item[1] Subset Method
+        \item[2] Transformations by existing identities
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}[t]{Set Identities}
+    \begin{theorem}
+        Let $A$ and $B$ be subsets of a universe, then $$A - B = A \cap \overline{B}$$
+    \end{theorem}
+\end{frame}
+
+\begin{frame}{}
+    %left blank
+\end{frame}
+
+\begin{frame}[t]{Set Identities}
+    %Give the alternative def of set difference A - B = A insersects not B
+    \begin{example}
+        Let $A,B, \text{ and } C$ be sets. Show that \begin{enumerate}
+            \item $(A - C) \cap (C - B) = \emptyset$
+            \item $(B - A) \cup (C - A) = (B \cup C) - A$
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Set Identities}
+    \begin{example}
+        Let $A,B, \text{ and } C$ be sets. Show that $(A - B) - C = (A - C) - (B - C)$.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Venn Diagram}
+    \begin{example}
+        Draw the Venn diagrams for each of these combinations of the sets $A, B, \text{ and } C$. 
+        \begin{enumerate}
+            \item $A \cap (B - C)$
+            \item $(A \cap B) \cup (A \cap C)$
+            \item $(A \cap \overline{B}) \cup (A \cap \overline{C})$
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Venn Diagram}
+    \begin{example}
+        What can you say about set $A$ and set $B$, where $A,B \subseteq \mathcal{U}$, if we know that \begin{enumerate}
+            \item $A \cup B = A$
+            \item $A \cap B = A$
+            \item $A - B = A$
+            \item $A \cap B = B \cap A$
+            \item $A - B = B - A$
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}{}
+    %left blank
+\end{frame}
+
+\begin{frame}[t]{Generalized Unions and Intersections}
+    \begin{example}
+        Let $A_i = \{\dots,-2,-1,0,1,2,\dots,i\}$. Find $\bigcup_{i=1}^{n} A_i$ and $\bigcap_{i=1}^{n} A_i$.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Power Set}
+    \begin{definition}
+        Given a set $S$, the \textbf{power set} of $S$ is the set of all subsets of $S$ denoted by $\mathcal{P}(S)$.
+    \end{definition}
+    \begin{theorem}
+        Let $A$ and $B$ be sets, then $$\mathcal{P}(A) \cup \mathcal{P}(B) \subseteq \mathcal{P}(A \cup B)$$
+    \end{theorem}
+\end{frame}
+
+\begin{frame}{}
+    %left blank
+\end{frame}
+
+\begin{frame}[t]{Power Set}
+    \begin{example}
+        Determine $|\mathcal{P}(\mathcal{P}(\mathcal{P}(\emptyset)))|$.
+    \end{example}
+\end{frame}
+
+\end{document}

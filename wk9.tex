@@ -1,0 +1,139 @@
+\documentclass{beamer}
+\usetheme{Boadilla}
+\usepackage{algorithm,algorithmic}
+\renewcommand{\mod}{\textbf{ mod }}
+\renewcommand{\div}{\textbf{ div }}
+\renewcommand{\implies}{\rightarrow}
+%Information to be included in the title page:
+\title{COMPSCI 1DM3 Tut 4}
+\subtitle{Week 09}
+\author{Zitong Gu}
+\institute{McMaster University}
+\date{Winter 2023}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}[t]{Modular Arithmetic}
+    \begin{example}
+        Prove that if $a$ is an integer that is not divisible by $3$, then $(a+1)(a+2)$ is divisible by $3$.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Modular Arithmetic}
+    \begin{example}
+        Prove that if $a$ is a positive integer, then $4$ does not divide $a^2+2$.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Modular Arithmetic}
+    \begin{example}
+        Find each of these values. \begin{enumerate}
+            \item $(99^2 \mod 32)^3 \mod 15$
+            \item $(3^4 \mod 17)^2 \mod 11$
+            \item $(19^3 \mod 23)^2 \mod 31$
+            \item $(89^3 \mod 79)^4 \mod 26$
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}{Modular Arithmetic}
+    \begin{example}
+        Find counterexamples to each of these statements about congruences. 
+        \begin{enumerate}
+            \item If $ac \equiv bc \mod m$, where $a,b,c,m \in \mathbb{Z}$ with $m \geq 2$, then $a \equiv b \mod m$.
+            \vspace{16mm}
+            \item If $a \equiv b \mod m$ and $c \equiv d \mod m$, where $a,b,c,d,m \in \mathbb{Z}$ with $c,d$ positive and $m \geq 2$, then $a^c \equiv b^d \mod m$.
+            \vspace{18mm}
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Modular Arithmetic}
+    \begin{example}
+        Show that if $n$ is an integer then $n^2 \equiv 0$ or $1 \, (\textbf{mod } 4)$. 
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Modular Arithmetic}
+    \begin{example}
+        Show that if $m$ is a positive integer of the form $4k+3$ for some nonnegative integer $k$, then $m$ is not the sum of the squares of two integers. 
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Modular Arithmetic}
+    \begin{example}
+        Show that if $a,b,k,m \in \mathbb{Z}$ such that $k \geq 1, m\geq 2$, and $a \equiv b \mod m$, then $a^k \equiv b^k \mod m$.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Modular Arithmetic}
+    \begin{example}
+        Determine whether each of the functions $f(a) = a \div d$ and $g(a) = a \mod d$, where $d$ is a fixed positive integer, from the set of integers to the set of integers, is one-to-one, and determine whether each of these functions is onto. 
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Integer Representations}
+    \begin{example}
+        Convert the binary expansion of each of these integers to a decimal expansion. \begin{enumerate}
+            \item $(1 \, 1111)_2$
+            \item $(10 \, 1011 \, 0101)_2$
+            \item $(11 \, 1011 \, 1110)_2$
+            \item $(111 \, 1100 \, 0001 \, 1111)_2$
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Integer Representations}
+    \begin{example}
+        Convert the octal expansion of each of these integers to a binary expansion. \begin{enumerate}
+            \item $(572)_8$
+            \item $(1604)_8$
+            \item $(423)_8$
+            \item $(2417)_8$
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Integer Representations}
+    \begin{example}
+        Give a procedure of converting from the hexadecimal expansion of an integer to its octal expansion using binary notation as an intermediate step. 
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Integer Representations}
+    \begin{example}
+        Find the sum and the product of each these pairs of numbers. Express your answer as a binary expansion. \begin{enumerate}
+            \item $(100 \, 0111)_2, (111 \, 0111)_2$
+            \item $(1110 \, 1111)_2, (1011 \, 1101)_2$
+            \item $(10 \, 1010 1010)_2, (1 \, 1111 \, 0000)_2$
+            \item $(10 \, 0000 \, 0001)_2, (11 \, 1111 \, 1111)_2$
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Integer Representations}
+    \begin{example}
+        show that a positive integer is divisible by $3$ iff the sum of its decimal digits is divisible by $3$.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Integer Representations}
+    \begin{example}
+        Suppose that $n$ and $b$ are positive integers with $b \geq 2$ and the base $b$ expansion of $n$ is $n = (a_ma_{m-1}\dots a_1a_0)_b$. Find the base $b$ expansion of \begin{enumerate}
+            \item $bn$
+            \item $b^2n$
+            \item $\lfloor n/b \rfloor$
+            \item $\lfloor n/b^2 \rfloor$
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Integer Representations}
+    \begin{example}
+        Prove that if $n$ and $b$ are positive integers with $b \geq 2$, then the base $b$ representation of $n$ has $\lfloor \log_{b}{n} \rfloor + 1$ digits.
+    \end{example}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,101 @@
+\documentclass{beamer}
+\usetheme{Boadilla}
+%Information to be included in the title page:
+\title{COMPSCI 1DM3 Tut 4}
+\subtitle{Week 03}
+\author{Zitong Gu}
+\institute{McMaster University}
+\date{Winter 2023}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Rules of Inference}
+    \begin{definition}
+        An \textbf{argument} in propositional logic is a sequence of propositions.
+    \end{definition}
+    \begin{definition}
+        All but the final proposition in the argument are called \textbf{premises} and the final proposition is called the \textbf{conclusion}.
+    \end{definition}
+    \begin{definition}
+        An argument is \textbf{valid} if the truth of all its premises implies that the conclusion is true.
+    \end{definition}
+\end{frame}
+
+\begin{frame}[t]{Rules of Inference}
+    \begin{example}
+        Show that the hypotheses ``I left my notes in the library or I finished the rough draft of the paper'' and ``I did not leave my notes in the library or I revised the bibliography'' imply that ``I finished the rough draft of the paper or I revised the bibliography.''
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Rules of Inference}
+    \begin{example}
+        Determine whether the following argument is valid. Name the rule of inference or the fallacy. \
+        If $n$ is a real number such that $n > 2$, then $n^2 > 4$. Suppose that $n \leq 2$. Then $n^2 \leq 4$.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Direct Proof}
+    \begin{example}
+        Consider the following theorem: if $x$ and $y$ are odd integers, then $x + y$ is even." Give a direct proof of this theorem.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Proof by Contrapositive}
+    \begin{example}
+        Consider the following theorem: If $x$ is an odd integer, then $x + 2$ is odd. Give a proof by contraposition of this theorem.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Proof by Contradiction}
+    \begin{example}
+        Given any 40 people, prove that at least four of them were born in the same month of the year.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Proof by Cases}
+    \begin{example}
+        Give a proof by cases that $x \leq |x|$ for all real numbers x.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Proving Equivalence}
+    \begin{example}
+        Prove that the following three statements about positive integers $n$ are equivalent: (a) $n$ is even; (b) $n^3 + 1$ is odd; (c) $n^2 - 1$ is odd.
+    \end{example}
+\end{frame}
+
+\begin{frame}
+%blank
+\end{frame}
+
+\begin{frame}[t]{Existence Proof}
+    \begin{example}
+        Prove that at least one of the real numbers $a_1, a_2, \dots, a_n$ is greater than or equal to the average of these numbers.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Existence and Uniqueness}
+    \begin{example}
+        Show that if $n$ is an odd integer, then there exists a unique integer $k$ such that $n^2 = 8k + 1$.
+    \end{example}
+\end{frame}
+
+\begin{frame}
+%blank
+\end{frame}
+
+\begin{frame}[t]{Without Loss of Generality (WLOG)}
+    \begin{example}
+        Prove using the notion of without loss of generality that $min(x, y) = (x + y - |x - y|)/2$ and $max(x, y) = (x + y + |x - y|)/2$ whenever $x$ and $y$ are real numbers.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Vacuous Proof (Optional)}
+    \begin{example}
+        Prove the proposition $P(0)$, where $P(n)$ is the proposition ``If $n$ is a positive integer greater than $1$, then $n^2 \geq n$.''
+    \end{example}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,254 @@
+\documentclass{beamer}
+\usetheme{Boadilla}
+
+\title{COMPSCI 1DM3 - Tut 4}
+\subtitle{Week 02}
+\author{Zitong Gu}
+\institute{McMaster University}
+\date{January 19, 2023}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Administrative details}
+    \begin{itemize}
+        \item My Contact Info: guz38@mcmaster.ca by email or MS Teams
+        \item Tutorial
+        \begin{itemize}
+            \item first part: covers contents from 1.1 to 1.5
+            \item second part: office hour
+        \end{itemize}
+        \item Participation Marks
+        
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Inclusive \textit{or} vs. Exclusive \textit{or}}
+    \begin{definition}
+        The \textbf{disjunction} of $p$ and $q$, denoted by $p$ \textit{or} $q$, is false when both $p$ and $q$ are false and is true otherwise. 
+    \end{definition}
+    
+    \begin{definition}
+        The \textbf{exclusive or} of $p$ and $q$, denoted by $p$ \textit{xor} $q$, is the proposition that is true when exactly one of $p$ and $q$ is true and is false otherwise.  
+    \end{definition}
+\end{frame}
+
+\begin{frame}[t]{Inclusive \textit{or} vs. Exclusive \textit{or}}
+    \begin{block}{Exercise}
+        For each of these sentences, determine whether an inclusive or, or an exclusive or, is intended. 
+        \begin{enumerate}[1]
+            \item Experiences with Python or C is required.
+            \item A combo includes fries or poutine.
+            \item To enter the country you need a passport or a voter registration card.
+            \item Faculty members publish papers or are terminated.
+        \end{enumerate}
+        \textit{Hint: Question that whether both scenarios can happen at the same time. }
+    \end{block}
+\end{frame}
+
+\begin{frame}{Conditional Statements}
+    The following ways of expressing if-then statement are logically equivalent. 
+
+    \vspace{2mm}
+    
+    \begin{columns}
+        \column{0.5\textwidth}
+            \begin{itemize}
+                \item if $p$, then $q$
+                \item if $p$, $q$
+                \item $p$ is sufficient for $q$
+                \item $q$ is $p$
+                \item $q$ when $p$
+                \item a necessary condition for $p$ is $q$
+                \item $q$ unless $\neg p$
+            \end{itemize}
+        \column{0.5\textwidth}
+            \begin{itemize}
+                \item $p$ implies $q$
+                \item $p$ only if $q$
+                \item a sufficient condition for $q$ is $p$
+                \item $q$ whenever $p$
+                \item $q$ is necessary for $p$
+                \item $q$ follows from $p$
+                \item $q$ provided that $p$
+            \end{itemize}
+    \end{columns}
+\end{frame}
+
+\begin{frame}[t]{Propositions related to $p \Rightarrow q$}
+    \begin{definition}
+        Let $p$ and $q$ be propositions. 
+        \begin{enumerate}
+            \item The \textbf{converse} of $p \Rightarrow q$ is the proposition $q \Rightarrow p$.
+            \item The \textbf{contrapositive} of $p \Rightarrow q$ is the proposition $\neg q \Rightarrow \neg p$
+            \item The \textbf{inverse} of $p \Rightarrow q$ is the proposition $\neg p \Rightarrow \neg q$
+        \end{enumerate}
+    \end{definition}
+    \begin{block}{Exercise}
+        Construct a truth table for implication, converse, contrapositive, and inverse. 
+    \end{block}
+\end{frame}
+
+\begin{frame}[t]{Propositions related to $p \Rightarrow q$}
+    \begin{theorem}
+        Let $f(x)$ be a function defined on interval $\mathcal{I}$ and assume that $a \in \mathcal{I}$. Then, if $f$ is differentiable at $a$, then $f$ is continuous at $a$.
+    \end{theorem}
+\end{frame}
+
+\begin{frame}{System Specifications}
+    \begin{definition}
+        A compound proposition is \textbf{satisfiable} if there exists an assignment of truth values to its variables that makes it true. 
+    \end{definition}
+    \begin{definition}
+        A set of system specifications is \textbf{consistent} if the conjunction of all element froms this set is satisfiable. 
+    \end{definition}
+    \begin{block}{Determine consistency}
+        \begin{enumerate}[1]
+            \item Translate specifications into propositions.
+            \item Construct a conjunction of all propositions and simplify (if possible).
+            \item Determine if the conjunction is satisfiable. 
+        \end{enumerate}
+    \end{block}
+\end{frame}
+
+\begin{frame}[t]{System Specifications}
+    \begin{example}
+        Determine whether the compound proposition $$(p \vee q \vee \neg r) \wedge (p \vee \neg q \vee \neg s) \wedge (p \vee \neg r \vee \neg s) \wedge (\neg p \vee \neg q \vee \neg s) \wedge (p \vee q \vee \neg s)$$ is satisfiable.
+        
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{System Specifications}
+    \begin{block}{Exercise}
+        Are these system specifications consistent? “Whenever the system software is being upgraded, users cannot access the file system. If users can access the file system, then they can save new files. If users cannot save new files, then the system software is not being upgraded.”
+    \end{block} 
+\end{frame}
+
+\begin{frame}[t]{Logic Puzzle - Island of Knights and Knaves}
+    \begin{block}{Exercise}
+        Suppose inhabitants of the island of knights and knaves, where knights always tell the truth and knaves always lie. You encounter two people, A and B. Determine, if possible, what A and B are if they address you in the ways described. If you cannot determine what these two people are, can you draw any conclusions?
+        \begin{enumerate}[1]
+            \item A says “The two of us are both knights” and B says “A is a knave.”
+            \item Both A and B say “I am a knight.”
+        \end{enumerate}
+    \end{block}
+\end{frame}
+
+\begin{frame}[t]{Logic Puzzle - Island of Knights and Knaves}
+    \begin{block}{Exercise}
+        \begin{enumerate}
+            \setcounter{enumi}{2}
+            \item A says “At least one of us is a knave” and B says nothing.
+            \item A says “I am a knave or B is a knight” and B says nothing.
+        \end{enumerate}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Logical Equivalences}
+    \begin{definition}
+        The propositions $p$ and $q$ are \textbf{logically equivalent}, denoted by $p \equiv q$, if $p \Leftrightarrow q$ is a tautology.
+    \end{definition}
+    \begin{block}{Determine logical equivalence}
+        \begin{itemize}
+            \item Method 1: Using transformations (a proof with logical equivalences)
+            \item Method 2: Constructing a truth table
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}[t]{Logical Equivalences}
+    \begin{block}{Exercise}
+        Show that $\neg p \Rightarrow (q \Rightarrow r)$ and $q \Rightarrow (p \vee r)$ are logically equivalent.
+    \end{block}
+\end{frame}
+
+\begin{frame}[t]{Logical Equivalences}
+    \begin{block}{Exercise}
+        Show that $(p \wedge q) \Rightarrow r$ and $(p \Rightarrow r) \wedge (q \Rightarrow r)$ are not logically equivalent.
+    \end{block}
+\end{frame}
+
+\begin{frame}[t]{Logical Equivalences}
+    \begin{block}{Quiz}
+        Let $p$ and $q$ be propositions. Select all propositions that are logically equivalent to $\neg ((\neg p) \vee q)$.
+        \begin{enumerate}[a]
+            \item $p \wedge \neg q$
+            \item $p \Rightarrow q$
+            \item $q \Rightarrow p$
+            \item $\neg (p \Rightarrow q)$
+            \item $\neg (q \Rightarrow p)$
+        \end{enumerate}
+    \end{block}
+\end{frame}
+
+\begin{frame}[t]{Predicates and Quantifications}
+    \begin{definition}
+        A \textbf{predicate} is a statement whose truth value depends on part of the statement that is variable. The set of possible values of the variables is the \textbf{universe} or \textbf{domain}. 
+    \end{definition}
+    \begin{example}
+        Let $P(x)$ denote that $x + 1 >3$.
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Predicates and Quantifications}
+    \begin{example}
+        Translate each of these statements into logical expressions.
+        \begin{enumerate}
+            \item Everyone in this class has studied calculus and Python.
+            \item Everyone in this class is happy about reading assignments.
+            \item There exists a person in this school who was born in the twentieth century. 
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Nested Quantifications}
+    \begin{definition}
+        Let $f$ be a function defined on some open interval that $\texttt{I}$ that contains the number $a$, except possibly at $a$ itself. Then we say that \textbf{the limit of $f(x)$ as $x$ approaches $a$ is $L$}, and we write $$\lim_{x \to a} f(x) = L$$ if for every number $\epsilon > 0$ there is a number $\delta > 0$ such that if $0 < |x - a| < \delta$ then $|f(x) - L| < \epsilon$.
+    \end{definition}
+\end{frame}
+
+\begin{frame}[t]{Nested Quantifications}
+    \begin{example}
+        Select all of the following statements that are true. 
+        \begin{enumerate}
+            \item $(\forall x \in \mathbb{R})(\exists y \in \mathbb{R})[xy = 1]$
+            \item $(\exists x \in \mathbb{R})(\forall y \in \mathbb{R})[xy = 1]$
+            \item $(\forall x \in \mathbb{R}, x \neq 0)(\exists y \in \mathbb{R})[xy > 0]$
+            \item $(\exists y \in \mathbb{R})(\forall x \in \mathbb{R}, x \neq 0)[xy > 0]$
+            \item $(\forall x \in \mathbb{Q})(\exists y \in \mathbb{Z})[xy \in \mathbb{Z}]$
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Nested Quantifications}
+    \begin{example}
+        Determine the truth value of the statement $(\exists x)(\forall y)[x \leq y^2]$ if the domain for the variables consists of 
+        \begin{enumerate}
+            \item the positive real numbers
+            \item the integers
+            \item the nonzero real numbers
+        \end{enumerate}
+    \end{example}
+\end{frame}
+
+\begin{frame}[t]{Challenge - From NAND gate to Everything}
+\begin{block}{Exercise}
+    (a) Implement a NOT gate using a single Nand gate for which the truth table is
+    \begin{table}[]
+        \centering
+        \begin{tabular}{c|c|c}
+             a & b & Nand(a, b) \\
+             \hline
+             0 & 0 & 1 \\
+             0 & 1 & 1 \\
+             1 & 0 & 1 \\
+             1 & 1 & 0
+        \end{tabular}
+    \end{table}
+    (b) Implement an AND gate using a Not gate and a Nand gate. 
+\end{block}
+    
+\end{frame}
+
+\end{document}

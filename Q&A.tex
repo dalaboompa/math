@@ -1,0 +1,64 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\makeatletter
+\newcommand{\dotminus}{\mathbin{\text{\@dotminus}}}
+\newcommand{\@dotminus}{%
+\ooalign{\hidewidth\raise1ex\hbox{.}\hidewidth\cr$\m@th-$\cr}%
+}
+\makeatother
+\newcommand{\hintt}[1]{\succ\, &\quad\quad \langle #1 \rangle}
+\newcommand{\hint}[1]{=\, &\quad\quad \langle #1 \rangle}
+\newcommand{\state}[1]{&\quad #1}
+\renewcommand{\implies}{\rightarrow}
+\newtheorem{theorem}{Theorem}
+\let\cd\cdot
+
+\title{CS 1DM3 - Q\&A}
+\author{Zitong Gu}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{theorem} If $\lim_{n \to \infty} \dfrac{f(n)}{g(n)} = 0$, then $f(n) \in O(g(n))$. \end{theorem}
+
+\paragraph{Question:} Show that $x^3 \in O(3^x)$. 
+
+\subparagraph{Intuition:} Since $3^x$ is an exponential function, it grows much faster than $x^3$ after some $x_0$. So $3^x$ is an upper bound of $x^3$. 
+
+\subparagraph{Proof by formal definition:} First we compute the lower bound $x_0$ (one of the witness) by solving the equation $x^3 = 3^x$. We obtain $x_0 = 3$ because $3^3 = 3^3$. We claim that $x^3 \leq 3^x$ for all $x \geq 3$ (If unspecified, you don't have to prove this claim since the proof may involve calculus or mathematical induction). So we have found suitable witnesses $c = 1$ and $x_0 = 3$ such that $(\forall x \geq x_0)[0 \leq x^3 \leq 1 \cdot 3^x]$. Thus, $x^3 \in O(3^x)$. 
+
+\subparagraph{Proof by limit definition:} Since \begin{equation*}
+    \lim_{x \to \infty} \dfrac{x^3}{3^x} \overset{\mathrm{LH}}{=} \lim_{x \to \infty} \dfrac{3x^2}{(\ln{3}) \cdot 3^x} \overset{\mathrm{LH}}{=} \lim_{x \to \infty} \dfrac{6x}{(\ln{3})^2 \cdot 3^x} \overset{\mathrm{LH}}{=} \lim_{x \to \infty} \dfrac{6}{(\ln{3})^3 \cdot 3^x} = 0
+\end{equation*}, it follows by Theorem 1 that $x^3 \in O(3^x)$. 
+
+\paragraph{(g)} Show that $(p \implies r) \wedge (q \implies r) \wedge \neg (p \vee q) \implies \neg r$ is not a tautology. Suppose we do not know whether it is a tautology or not, we first try to prove that it is a tautology:
+
+\begin{align*}
+    \state{(p \implies r) \wedge (q \implies r) \wedge \neg (p \vee q)} \\
+    \hint{\text{Def of Implication}} \\
+    \state{(\neg p \vee r) \wedge (\neg q \vee r) \wedge \neg (p \vee q)} \\
+    \hint{\text{Distributivity}} \\
+    \state{(r \vee (\neg p \wedge \neg q)) \wedge \neg (p \vee q)} \\
+    \hint{\text{De Morgan's Law}} \\
+    \state{(r \vee \neg (p \vee q)) \wedge \neg (p \vee q)} \\
+    \hint{\text{Absorption}} \\
+    \state{\neg (p \vee q)}
+\end{align*}
+
+\noindent At this point, clearly $\neg (p \vee q)$ does not imply $\neg r$. Now our goal is to show that $\neg (p \vee q) \implies \neg r$ is not a tautology by giving a counterexample. Since the assignment $p,q := false, r := true$ would make $\neg (p \vee q) \implies \neg r \equiv false$, we have shown the given argument is invalid. Note: in general, we may show an implication is false by showing its hypothesis is true and its conclusion is false. 
+
+\paragraph{(j)} Providing an counterexample would be sufficient: We let $X = \{0\}, Y = \{1,2\}, Z = \{3\}$ and define $$g: X \to Y, g(0) = 1$$ and $$f: Y \to Z, f(1) = f(2) = 3$$,
+ from which we know $f \circ g$ and $g$ are injective but $f$ is not. 
+
+ \paragraph{(k)} suppose that $g : A \to B$ and $f : B \to C$, so that $f \circ g : A \to C$. We will prove that if
+$f \circ g$ is one-to-one, then $g$ is also one-to-one, part of the hypothesis is not even needed ($f$ is injective). We give a proof by contrapositive. Suppose that $g$ were not one-to-one. By definition this means that there are distinct elements $a_1$ and $a_2$ in $A$ such that $g(a_1) = g(a_2)$ . Then certainly $f(g(a_1)) = f(g(a_2))$ , which is the same statement as $(f \circ g)(a1) = (f \circ g)(a_2)$ . By definition this means that $f \circ g$ is not one-to-one, and our proof is complete.
+
+
+\end{document}
